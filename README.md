@@ -8,4 +8,6 @@
   <img src="./public/logo.png" alt="logo" height="100">
 </div>
 
-This is a fake assignment submission page on moodle
+<a name="readme-top"></a>
+
+This is a fake assignment submission page based on moodle
