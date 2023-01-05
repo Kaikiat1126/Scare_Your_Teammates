@@ -17,6 +17,16 @@
     padding: 0.5rem 1rem;
 }
 
+.icon{
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    vertical-align: middle;
+}
+
 img{
     vertical-align: middle;
     border-style: none;
@@ -24,4 +34,21 @@ img{
 
 .nav_logo img{
     max-height: 35px;
+}
+
+.btn-light {
+    color: #212529;
+    border-color: #f8f9fa;
+}
+
+.bg-gray {
+    background-color: #e9ecef!important;
+}
+
+.btn-side{
+    margin-right: 0.5rem;
+}
+
+.btn-side:hover{
+    background-color: #cbd3da !important;
 }
