@@ -1,6 +1,8 @@
 import '../style/style.css'
-import javascriptLogo from '../public/javascript.svg'
-import { setupCounter } from './counter.js'
+import javascriptLogo from '/javascript.svg'
+import Navigation from './navigation.js';
+
+const nav = new Navigation();
 
 export default class APP{
     constructor(name, id){
@@ -13,7 +15,9 @@ export default class APP{
 
     init(){
         //this.con =
-        this.contents = `<div>
+        this.contents = 
+        `<div>
+            <div id="navbox"></div>
             <a href="https://vitejs.dev" target="_blank">
                 <img src="/vite.svg" class="logo" alt="Vite logo" />
             </a>
@@ -32,10 +36,8 @@ export default class APP{
     }
 
     render(id){
-        //console.log("render ", id);
         document.querySelector(id).innerHTML = this.contents;
-        setupCounter(document.querySelector('#counter'))
-        //console.log('rendered');
+        nav.render("#navbox");
     }
 
 }

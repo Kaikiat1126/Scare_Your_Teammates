@@ -1,0 +1,27 @@
+.navbar{
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 8%);
+    max-height: 50px;
+}
+
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+.navpadding{
+    padding: 0.5rem 1rem;
+}
+
+img{
+    vertical-align: middle;
+    border-style: none;
+}
+
+.nav_logo img{
+    max-height: 35px;
+}
