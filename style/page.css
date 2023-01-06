@@ -1,13 +1,24 @@
-#page-header{
+#page-header, #page-body{
     min-width: 0;
     word-wrap: break-word;
     background-clip: border-box; 
     border: 1px solid rgba(0,0,0,.125);
 }
 
+#page-body{
+    overflow-x: auto;
+    overflow-y: visible;
+}
+
 .course-title{
     font-size: 37.5px !important;
     line-height: 1.2 !important;
+}
+
+#submit-title{
+    font-size: 30px; 
+    line-height: 1.2;
+    margin-bottom: 8px !important;
 }
 
 .breadcrumb{
@@ -34,6 +45,56 @@
     padding-left: 0.5rem;
     color: #6c757d;
     content: "/";
+}
+
+#submit-intro{
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+}
+
+#submit-table{
+    margin-bottom: 5em;
+}
+
+#table-title{
+    font-size: 26.25px;
+    line-height: 1.2;
+}
+
+#summary-table{
+    margin-top: 1em;
+}
+
+#general-table{
+    width: 100%;
+    color: #212529;
+}
+
+table {
+    display: table;
+    border-collapse: collapse;
+    border-color: grey;
+}
+
+tr{
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+th{
+    text-align: inherit;
+}
+
+#general-table th, #general-table td{
+    padding: 12px;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+    box-sizing: border-box;
+}
+
+#general-table tbody tr:nth-of-type(odd){
+    background-color: rgba(0,0,0,.05);
 }
 
 @media (min-width: 576px){

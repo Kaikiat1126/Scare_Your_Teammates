@@ -1,10 +1,7 @@
-import Config from "./config.js";
-
-const config = new Config();
-console.log(config.getSumbitText());
-
 export default class PageHeader{
-    constructor(){
+    constructor(moduleName, submitText){
+        this.moduleName = moduleName;
+        this.submitText = submitText;
         this.contents = "";
         this.init();
     }
@@ -15,7 +12,7 @@ export default class PageHeader{
             <div class="align-items-center d-sm-flex">
                 <div class="mr-auto">
                     <div class="pd-1 overflow-hidden pos-relative lh-24 float-l ver-al-mid">
-                        <h1 class="course-title mt-0 mb-2 fw-300">${config.getModuleName()}</h1>
+                        <h1 class="course-title mt-0 mb-2 fw-300">${this.moduleName}</h1>
                     </div>
                 </div>
             </div>
@@ -29,16 +26,17 @@ export default class PageHeader{
                             My courses
                         </li>
                         <li class="bc-items flex">
-                            <a href="#" class="bc-item bg-transparent txt-none">${config.getModuleName()}</a>
+                            <a href="#" class="bc-item bg-transparent txt-none">${this.moduleName}</a>
                         </li>
                         <li class="bc-items flex">
                             <a href="#" class="bc-item bg-transparent txt-none">Summative Assessment</a>
                         </li>
                         <li class="bc-items flex">
-                            <a href="#" class="bc-item bg-transparent txt-none">${config.getSumbitText()}</a>
+                            <a href="#" class="bc-item bg-transparent txt-none">${this.submitText}</a>
                         </li>
                     </ol>
                 </div>
+                <div class="ml-auto flex"></div>
             </div>
         </div>`
     }

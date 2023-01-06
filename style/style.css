@@ -79,6 +79,10 @@ button {
   color: #fff;
 }
 
+.c-black{
+  color: #000;
+}
+
 .c-blue{
   color: #0f6fc5;
 }
@@ -105,6 +109,10 @@ button {
 
 .fw-300{
   font-weight: 300 !important;
+}
+
+.w-150{
+  width: 150px !important;
 }
 
 .m-0{
@@ -228,6 +236,10 @@ button {
   text-align: center;
 }
 
+.txt-left{
+  text-align: left;
+}
+
 .txt-none{
   text-decoration: none;
 }
@@ -274,6 +286,10 @@ button {
 
 .pos-relative{
   position: relative;
+}
+
+.overflow-auto{
+  overflow: auto;
 }
 
 .overflow-hidden{

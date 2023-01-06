@@ -24,13 +24,6 @@ export default class APP{
         this.contents = 
         `<div>
             <div id="pagebox"></div>
-            <a href="https://vitejs.dev" target="_blank">
-                <img src="/vite.svg" class="logo" alt="Vite logo" />
-            </a>
-            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-                <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-            </a>
-            <h1>Hello ${this.name}!</h1>
             <div id="helpbox"></div>
             <div id="navbox"></div>
             <div id="footerbox"></div>

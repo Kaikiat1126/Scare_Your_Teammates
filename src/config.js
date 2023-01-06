@@ -2,10 +2,11 @@ export default class Config{
     constructor(){
         this.name = "TYU KAI KIAT";
         this.moduleName = "System Development Methods (092022-SKK)";
-        this.dueDate = "due date";
+        this.dueDate = "Friday, 23 December 2022, 11:59 PM";
         this.url = "/default_profile.png";
         this.title = "Vite App";
         this.submitText = "Assignment Submission";
+        this.groupStr = "Group 10";
     }
     
     getName(){
@@ -36,5 +37,9 @@ export default class Config{
 
     getSumbitText(){
         return this.getModuleCode() +" " + this.submitText;
+    }
+
+    getGroupStr(){
+        return this.groupStr;
     }
 }
