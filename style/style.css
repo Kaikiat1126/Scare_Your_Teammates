@@ -118,6 +118,19 @@ button {
   cursor: pointer;
 }
 
+.btn-light {
+  color: #212529;
+  border-color: #f8f9fa;
+}
+
+.hide{
+  display: none !important;
+}
+
+.show{
+  display: block !important;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

@@ -1,8 +1,10 @@
 import '../style/style.css'
 import javascriptLogo from '/javascript.svg'
 import Navigation from './navigation.js';
+import Help from './help.js';
 
 const nav = new Navigation();
+const help = new Help();
 
 export default class APP{
     constructor(name, id){
@@ -28,12 +30,15 @@ export default class APP{
             <p class="read-the-docs">
                 Click on the Vite logo to learn more
             </p>
+            <div id="helpbox"></div>
+            <div id="footerbox"></div>
         </div>`
     }
 
     render(id){
         document.querySelector(id).innerHTML = this.contents;
         nav.render("#navbox");
+        help.render("#helpbox");
     }
 
 }
