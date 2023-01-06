@@ -75,6 +75,10 @@ button {
               border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out;
 }
 
+.c-white{
+  color: #fff;
+}
+
 .c-blue{
   color: #0f6fc5;
 }
@@ -101,6 +105,10 @@ button {
 
 .ml-auto{
   margin-left: auto !important;
+}
+
+.mt-50{
+  margin-top: 3.125rem !important;
 }
 
 .pl-2{
@@ -140,12 +148,48 @@ button {
   border-color: #f8f9fa;
 }
 
+.txt-center{
+  text-align: center;
+}
+
+.txt-under{
+  text-decoration: underline;
+}
+
+.flex{
+  display: flex;
+}
+
+.flex-row{
+  flex-direction: row;
+}
+
+.flex-col{
+  flex-direction: column;
+}
+
 .hide{
   display: none !important;
 }
 
 .show{
   display: block !important;
+}
+
+.pos-inherit{
+  position: inherit;
+}
+
+.pos-relative{
+  position: relative;
+}
+
+.container, .container-body {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 @media (prefers-color-scheme: light) {

@@ -10,7 +10,7 @@ export default class Footer{
         this.contents = 
         `<div id="footer" class="pt-3 pb-3 bg-dark c-light">
             <div class="container">
-                <a href="#" class="cur-p">Get the mobile app</a>
+                <a href="#" class="cur-p c-white pos-relative txt-under">Get the mobile app</a>
             </div>
         </div>`
     }

@@ -4,6 +4,7 @@ export default class Config{
         this.modulename = "module name";
         this.dueDate = "due date";
         this.url = "/default_profile.png";
+        this.title = "Vite App";
     }
     
     getName(){
@@ -20,6 +21,10 @@ export default class Config{
 
     getUrl(){
         return this.url;
+    }
+
+    getTitle(){
+        return this.title;
     }
 
 }

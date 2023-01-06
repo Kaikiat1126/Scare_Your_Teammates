@@ -1,21 +1,5 @@
 #footer{
     flex-shrink: 0;
-    /* padding-left: 0 !important;
-    padding-right: 0 !important; */
-}
-
-#footer>.container> a{
-    position: relative;
-    color: #fff;
-    text-decoration: underline;
-}
-
-.container {
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
 }
 
 @media (min-width: 992px){

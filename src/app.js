@@ -3,8 +3,10 @@ import javascriptLogo from '/javascript.svg'
 import Navigation from './Navigation.js';
 import Help from './Help.js';
 import Footer from './Footer.js';
+import Page from './Page.js';
 
 const nav = new Navigation();
+const page = new Page();
 const help = new Help();
 const footer = new Footer();
 
@@ -22,6 +24,7 @@ export default class APP{
         this.contents = 
         `<div>
             <div id="navbox"></div>
+            <div id="pagebox"></div>
             <a href="https://vitejs.dev" target="_blank">
                 <img src="/vite.svg" class="logo" alt="Vite logo" />
             </a>
@@ -40,6 +43,7 @@ export default class APP{
     render(id){
         document.querySelector(id).innerHTML = this.contents;
         nav.render("#navbox");
+        page.render("#pagebox");
         help.render("#helpbox");
         footer.render("#footerbox");
     }
