@@ -1,7 +1,7 @@
 import '../style/style.css'
 import javascriptLogo from '/javascript.svg'
-import Navigation from './navigation.js';
-import Help from './help.js';
+import Navigation from './Navigation.js';
+import Help from './Help.js';
 
 const nav = new Navigation();
 const help = new Help();
