@@ -1,8 +1,9 @@
 export default class Config{
     constructor(){
-        this.name = "username";
+        this.name = "TYU KAI KIAT";
         this.modulename = "module name";
         this.dueDate = "due date";
+        this.url = "/default_profile.png";
     }
     
     getName(){
@@ -15,6 +16,10 @@ export default class Config{
 
     getDueDate(){
         return this.dueDate;
+    }
+
+    getUrl(){
+        return this.url;
     }
 
 }
