@@ -23,7 +23,6 @@ export default class APP{
         //this.con =
         this.contents = 
         `<div>
-            <div id="navbox"></div>
             <div id="pagebox"></div>
             <a href="https://vitejs.dev" target="_blank">
                 <img src="/vite.svg" class="logo" alt="Vite logo" />
@@ -36,6 +35,7 @@ export default class APP{
                 Click on the Vite logo to learn more
             </p>
             <div id="helpbox"></div>
+            <div id="navbox"></div>
             <div id="footerbox"></div>
         </div>`
     }

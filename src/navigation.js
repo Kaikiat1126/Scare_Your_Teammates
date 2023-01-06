@@ -10,7 +10,7 @@ export default class Navigation {
     init(){
         const config = new Config();
         this.contents = 
-        `<div class="navbar fixed-top navpadding ">
+        `<div class="navbar fixed-top navpadding bg-white">
                 <div class="nav_side mr-3">
                     <button class="btn btn-light bg-gray btn-side mr-1" type="button">
                         <i class="fa-sharp fa-solid fa-bars icon"></i>
