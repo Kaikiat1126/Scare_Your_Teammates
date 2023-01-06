@@ -2,9 +2,11 @@ import '../style/style.css'
 import javascriptLogo from '/javascript.svg'
 import Navigation from './Navigation.js';
 import Help from './Help.js';
+import Footer from './Footer.js';
 
 const nav = new Navigation();
 const help = new Help();
+const footer = new Footer();
 
 export default class APP{
     constructor(name, id){
@@ -39,6 +41,7 @@ export default class APP{
         document.querySelector(id).innerHTML = this.contents;
         nav.render("#navbox");
         help.render("#helpbox");
+        footer.render("#footerbox");
     }
 
 }
