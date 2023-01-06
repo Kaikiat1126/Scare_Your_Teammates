@@ -27,8 +27,8 @@ export default class Navigation {
                 </div>
                 <div class="nav_menu nav">
                     <div class="nav_item">
-                        <div class="btn btn-color pd-8 cur-p"><i class="fa-solid fa-bell icon"></i></div>
-                        <div class="btn btn-color pd-8 cur-p"><i class="fa-sharp fa-solid fa-comment icon"></i></div>
+                        <div class="btn btn-color pd-2 cur-p"><i class="fa-solid fa-bell icon"></i></div>
+                        <div class="btn btn-color pd-2 cur-p"><i class="fa-sharp fa-solid fa-comment icon"></i></div>
                     </div>
                     <div class="nav_item align-item-center pl-2">
                         <div class="nav_usermenu cur-p c-blue">

@@ -13,15 +13,15 @@ export default class Page{
 
     init(){
         this.contents = 
-        `<div id="page" class="mt-50 flex flex-col pos-inherit">
-            <div id="page-header"></div>
-            <div id="page-body"></div>
+        `<div id="page" class="container-body mt-65 flex flex-col pos-inherit">
+            <div id="page-headerbox" class="pt-3 pb-3"></div>
+            <div id="page-bodybox"></div>
         </div>`
     }
 
     render(id){
         document.querySelector(id).innerHTML = this.contents;
-        header.render("#page-header");
-        body.render("#page-body");
+        header.render("#page-headerbox");
+        body.render("#page-bodybox");
     }
 }

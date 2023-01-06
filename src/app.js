@@ -31,9 +31,6 @@ export default class APP{
                 <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
             </a>
             <h1>Hello ${this.name}!</h1>
-            <p class="read-the-docs">
-                Click on the Vite logo to learn more
-            </p>
             <div id="helpbox"></div>
             <div id="navbox"></div>
             <div id="footerbox"></div>

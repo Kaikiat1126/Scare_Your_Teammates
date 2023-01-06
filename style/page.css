@@ -1,0 +1,43 @@
+#page-header{
+    min-width: 0;
+    word-wrap: break-word;
+    background-clip: border-box; 
+    border: 1px solid rgba(0,0,0,.125);
+}
+
+.course-title{
+    font-size: 37.5px !important;
+    line-height: 1.2 !important;
+}
+
+.breadcrumb{
+    padding: 0.25rem 0;
+    list-style: none;
+}
+
+.bc-items{
+    text-align: -webkit-match-parent;
+}
+
+.bc-items a{
+    color: #0f6fc5;
+}
+
+.bc-items a:hover{
+    color: #0a477e;
+    text-decoration: underline;
+}
+
+.bc-items+.bc-items::before{
+    display: inline-block;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    color: #6c757d;
+    content: "/";
+}
+
+@media (min-width: 576px){
+    .d-sm-flex {
+        display: flex!important;
+    }
+}
