@@ -3,6 +3,7 @@ import Config from "./config.js";
 const config = new Config();
 const groupStr = config.getGroupStr();
 const dueDate = config.getDueDate();
+const timeRemaining = config.getTimeRemaining();
 
 export default class SubmissionTable{
     constructor(){
@@ -35,7 +36,7 @@ export default class SubmissionTable{
                         </tr>
                         <tr>
                             <th class="w-150">Time remaining</th>
-                            <td>4 hours 20 mins</td>
+                            <td>${timeRemaining}</td>
                         </tr>
                         <tr>
                             <th class="w-150">Last modified</th>

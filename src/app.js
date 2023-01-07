@@ -1,5 +1,4 @@
 import '../style/style.css'
-import javascriptLogo from '/javascript.svg'
 import Navigation from './Navigation.js';
 import Help from './Help.js';
 import Footer from './Footer.js';
@@ -12,7 +11,6 @@ const footer = new Footer();
 
 export default class APP{
     constructor(name, id){
-        //console.log("APP");
         this.name = name;
         this.contents = "";
         this.init();
@@ -20,7 +18,6 @@ export default class APP{
     }
 
     init(){
-        //this.con =
         this.contents = 
         `<div>
             <div id="pagebox"></div>

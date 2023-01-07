@@ -1,12 +1,20 @@
+import DateTools from "./dateTools.js";
+
 export default class Config{
     constructor(){
         this.name = "TYU KAI KIAT";
         this.moduleName = "System Development Methods (092022-SKK)";
         this.dueDate = "Friday, 23 December 2022, 11:59 PM";
+        //this.dueDate = "Monday, 9 January 2023, 11:59 PM";
+
+        const dateTools = new DateTools(this.dueDate);
+
+        this.isDue = false;
         this.url = "/default_profile.png";
         this.title = "Vite App";
         this.submitText = "Assignment Submission";
         this.groupStr = "Group 10";
+        this.timeRemainingText = dateTools.getTimeRemaining(this.dueDate);
     }
     
     getName(){
@@ -19,6 +27,10 @@ export default class Config{
 
     getDueDate(){
         return this.dueDate;
+    }
+
+    getIsDue(){
+        return this.isDue;
     }
 
     getUrl(){
@@ -42,4 +54,9 @@ export default class Config{
     getGroupStr(){
         return this.groupStr;
     }
+
+    getTimeRemaining(){
+        return this.timeRemainingText;
+    }
+
 }
