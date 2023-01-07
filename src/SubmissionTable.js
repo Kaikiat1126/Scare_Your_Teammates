@@ -47,7 +47,16 @@ export default class SubmissionTable{
                         </tr>
                         <tr>
                             <th class="w-150">Submission comments</th>
-                            <td>-</td>
+                            <td>
+                                <div class="pb-3 pt-3">
+                                    <div class="txt-left">
+                                        <a id="submit-comment" class="cur-p bg-transparent">
+                                            <i class="fa-solid fa-caret-right icon mr-2 fs-13"></i>
+                                            <span>Comments (0)</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </td>
                         </tr>
                     </tbody>
                 </table>

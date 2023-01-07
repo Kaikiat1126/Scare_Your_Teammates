@@ -19,6 +19,33 @@ export default class PageBody{
                 </div>
             </div>
             <div id="submit-tablebox"></div>
+            <div class="mt-5 mb-1 ">
+                <div class="flex flex-wrap align-items-center">
+                    <div class="col-md-4">
+                        <div class="float-l">
+                            <a href="#" class="btn txt-center bg-transparent ver-al-mid cur-p fw-400 activity-link"></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="txt-center">
+                            <div id="url-select">   
+                                <form action"#" class="flex flex-wrap align-items-center form-inline">
+                                    <label class="sr-only">Jump to...</label>
+                                    <select class="form-control ver-al-mid fs-15 fw-400 bg-white m-0 pos-relative arrow bg-norepeat">
+                                        <option value selected>Jump to...</option>
+                                        <option value="submit-intro">Submission introduction</option>
+                                    </select>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="float-r">
+                            <a href="#" class="btn cur-p fw-400 activity-link">Assignment Group member self-enrolment link ►</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>`
     }
 
