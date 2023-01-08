@@ -4,8 +4,10 @@ export default class Config{
     constructor(){
         this.name = "TYU KAI KIAT";
         this.moduleName = "System Development Methods (092022-SKK)";
+        //this.moduleName = "Workplace Professional Communication Skills (092022-VNH)";
         this.dueDate = "Friday, 23 December 2022, 11:59 PM";
         //this.dueDate = "Monday, 9 January 2023, 11:59 PM";
+        //this.dueDate = "Friday, 23 December 2022, 12:00 AM";
 
         const dateTools = new DateTools(this.dueDate);
 
@@ -13,6 +15,7 @@ export default class Config{
         this.url = "/default_profile.png";
         this.title = "Vite App";
         this.submitText = "Assignment Submission";
+        //this.submitText = "Individual Internship Letter Writing";
         this.groupStr = "Group 10";
         this.timeRemainingText = dateTools.getTimeRemaining(this.dueDate);
     }
@@ -49,6 +52,7 @@ export default class Config{
 
     getSumbitText(){
         return this.getModuleCode() +" " + this.submitText;
+       // return this.submitText;
     }
 
     getGroupStr(){

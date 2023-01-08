@@ -169,6 +169,11 @@ th{
     box-shadow: 0 0 0 0.2rem rgb(15 111 197 / 75%);
 }
 
+.dueSubmission{
+    color: #000;
+    background-color: #fbaca3;
+}
+
 @media (min-width: 576px){
     .d-sm-flex {
         display: flex!important;
