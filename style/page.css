@@ -172,6 +172,7 @@ th{
 .dueSubmission{
     color: #000;
     background-color: #fbaca3;
+    /* background-color: #efcfcf; */
 }
 
 @media (min-width: 576px){

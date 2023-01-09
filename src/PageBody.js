@@ -15,7 +15,7 @@ export default class PageBody{
             <h2 id="submit-title" class="mb-2 mt-0 fw-300">${this.submitText}</h2>
             <div id="submit-intro" class="pb-3 pt-3">
                 <div class="overflow-auto">
-                    <p class="mt-0 mb-3 txt-left">Each group only need to submit ONE assignment document.</p>
+                    <p class="mt-0 mb-3 txt-left">Submit individually</p>
                 </div>
             </div>
             <div id="submit-tablebox"></div>

@@ -52,7 +52,7 @@ export default class Config{
 
     getSumbitText(){
         return this.getModuleCode() +" " + this.submitText;
-       // return this.submitText;
+        //return this.submitText;
     }
 
     getGroupStr(){
