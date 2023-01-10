@@ -63,4 +63,8 @@ export default class DateTools{
         }
     }
 
+    getIsDue(){
+        return this.isDue;
+    }
+
 }

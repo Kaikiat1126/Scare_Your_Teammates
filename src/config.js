@@ -11,13 +11,14 @@ export default class Config{
 
         const dateTools = new DateTools(this.dueDate);
 
-        this.isDue = false;
         this.url = "/default_profile.png";
         this.title = "Vite App";
         this.submitText = "Assignment Submission";
         //this.submitText = "Individual Internship Letter Writing";
         this.groupStr = "Group 10";
         this.timeRemainingText = dateTools.getTimeRemaining(this.dueDate);
+        this.isDue = dateTools.getIsDue();
+        this.isSubmit = false;
     }
     
     getName(){
@@ -63,4 +64,8 @@ export default class Config{
         return this.timeRemainingText;
     }
 
+    getSubmissionStatusText(){
+        return isSubmit ? "Submitted for grading" : "Nothing has been submitted for this assignment";
+    }
+    
 }

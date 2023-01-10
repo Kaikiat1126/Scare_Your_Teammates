@@ -4,6 +4,7 @@ const config = new Config();
 const groupStr = config.getGroupStr();
 const dueDate = config.getDueDate();
 const timeRemaining = config.getTimeRemaining();
+const submissionText = config.getSubmissionStatusText();
 
 export default class SubmissionTable{
     constructor(){
@@ -24,7 +25,7 @@ export default class SubmissionTable{
                         </tr>
                         <tr>
                             <th class="w-150">Submission status</th>
-                            <td class="c-black">Nothing has been submitted for this assignment</td>
+                            <td class="c-black">${submissionText}</td>
                         </tr>
                         <tr>
                             <th class="w-150">Grading status</th>
