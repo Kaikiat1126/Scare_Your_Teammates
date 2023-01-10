@@ -57,7 +57,7 @@ export default class DateTools{
         //console.log(timeStr);
 
         if(this.isDue){
-            return `Assignment is overdue by ${timeStr}`;
+            return `Assignment is overdue by: ${timeStr}`;
         }else{
             return `${timeStr}`;
         }

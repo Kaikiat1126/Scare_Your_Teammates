@@ -170,9 +170,9 @@ th{
 }
 
 .dueEffect{
-    color: #000;
+    color: #ff0000;
     /* background-color: #fbaca3; */
-    background-color: #efcfcf;
+    /* background-color: #efcfcf; */
 }
 
 .submitEffect{

@@ -41,7 +41,7 @@ export default class SubmissionTable{
                         </tr>
                         <tr>
                             <th class="w-150">Time remaining</th>
-                            <td class="timeRemaining">${timeRemaining}</td>
+                            <td class="timeRemaining dueEffect">${timeRemaining}</td>
                         </tr>
                         <tr>
                             <th class="w-150">Last modified</th>
