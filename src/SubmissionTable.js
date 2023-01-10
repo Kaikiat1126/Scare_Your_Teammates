@@ -3,9 +3,15 @@ import Config from "./config.js";
 const config = new Config();
 const groupStr = config.getGroupStr();
 const dueDate = config.getDueDate();
-const timeRemaining = config.getTimeRemaining();
-const submissionText = config.getSubmissionStatusText();
+const isDue = config.getIsDue();
 const isSubmit = config.getIsSubmit();
+
+let timeRemaining = "";
+if(isSubmit && !isDue) timeRemaining = config.getIsSubmittedTime();
+else if(isSubmit && isDue) timeRemaining = config.getIsLateTime();
+else timeRemaining = config.getTimeRemaining();
+
+const submissionText = config.getSubmissionStatusText();
 const fileIconPath = config.getFileIconPath();
 const fileName = config.getFileName();
 const plagiarism = config.getPlagiarism();
@@ -29,7 +35,7 @@ export default class SubmissionTable{
                         </tr>
                         <tr>
                             <th class="w-150">Submission status</th>
-                            <td class="c-black">${submissionText}</td>
+                            <td id="submit-text" class="c-black">${submissionText}</td>
                         </tr>
                         <tr>
                             <th class="w-150">Grading status</th>
@@ -41,7 +47,7 @@ export default class SubmissionTable{
                         </tr>
                         <tr>
                             <th class="w-150">Time remaining</th>
-                            <td class="timeRemaining dueEffect">${timeRemaining}</td>
+                            <td id="time-remaining">${timeRemaining}</td>
                         </tr>
                         <tr>
                             <th class="w-150">Last modified</th>
@@ -107,9 +113,25 @@ export default class SubmissionTable{
         filePlugin.innerHTML = pluginHtml;
     }
 
+    initSubmitEffect(){
+        const submitText = document.querySelector("#submit-text");
+        const timeRemaining = document.querySelector("#time-remaining");
+
+        if(isSubmit && !isDue){
+            submitText.classList.add("submitEffect");
+            timeRemaining.classList.add("submitEffect");
+        }else if(isSubmit && isDue){
+            submitText.classList.add("submitEffect");
+            timeRemaining.classList.add("lateEffect");
+        }else if(!isSubmit && isDue){
+            timeRemaining.classList.add("noSubmitEffect");
+        }
+    }
+
 
     render(id){
         document.querySelector(id).innerHTML = this.contents;
         this.initFilePlugin();
+        this.initSubmitEffect();
     }
 }

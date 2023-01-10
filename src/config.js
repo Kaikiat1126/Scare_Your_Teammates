@@ -5,14 +5,12 @@ export default class Config{
         this.name = "TYU KAI KIAT";
         this.moduleName = "System Development Methods (092022-SKK)";
         //this.moduleName = "Workplace Professional Communication Skills (092022-VNH)";
-        this.dueDate = "Friday, 23 December 2022, 11:59 PM";
-        //this.dueDate = "Monday, 9 January 2023, 11:59 PM";
-        //this.dueDate = "Friday, 23 December 2022, 12:00 AM";
+        //this.dueDate = "Friday, 23 December 2022, 11:59 PM";
+        this.dueDate = "Monday, 12 January 2023, 11:59 PM";
 
         const dateTools = new DateTools(this.dueDate);
 
         this.url = "/default_profile.png";
-        this.title = "Vite App";
         this.submitText = "Assignment Submission";
         //this.submitText = "Individual Internship Letter Writing";
         this.submitDesc = "Each group only need to submit ONE assignment document."
@@ -20,6 +18,8 @@ export default class Config{
         this.timeRemainingText = dateTools.getTimeRemaining(this.dueDate);
         this.isDue = dateTools.getIsDue();
         this.isSubmit = true;
+        this.isSubmittedTime = "1 day 20 hours"
+        this.isLateTime = "10 secs"
         this.fileIconType = "docx";
         this.fileName = "Group10_SDM_Assignment"
         this.plagiarism = 9;
@@ -74,6 +74,14 @@ export default class Config{
 
     getTimeRemaining(){
         return this.timeRemainingText;
+    }
+
+    getIsSubmittedTime(){
+        return `Assignment was submitted ${this.isSubmittedTime} early`;
+    }
+
+    getIsLateTime(){
+        return `Assignment was submitted ${this.isLateTime} late`;
     }
 
     getSubmissionStatusText(){
