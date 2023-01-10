@@ -113,12 +113,32 @@ button {
   background-repeat-y: no-repeat;
 }
 
+.bd-0{
+  border: 0 !important;
+}
+
+.bd-box{
+  box-sizing: border-box;
+}
+
+.bs-none{
+  border-style: none;
+}
+
 .lh-24{
   line-height: 24px;
 }
 
+.min-w-300{
+  min-width: 300px;
+}
+
 .fw-300{
   font-weight: 300 !important;
+}
+
+.fs-12{
+  font-size: 12px !important;
 }
 
 .fs-13{
@@ -155,6 +175,10 @@ button {
 
 .ml-auto{
   margin-left: auto !important;
+}
+
+.ml-0{
+  margin-left: 0 !important;
 }
 
 .mr-auto{
@@ -229,6 +253,10 @@ button {
   align-items: center !important;
 }
 
+.pd-0{
+  padding: 0 !important;
+}
+
 .pd-1{
   padding: 0.25rem !important;
 }
@@ -276,6 +304,10 @@ button {
 
 .ver-al-mid{
   vertical-align: middle;
+}
+
+.ver-al-top{
+  vertical-align: top;
 }
 
 .flex{

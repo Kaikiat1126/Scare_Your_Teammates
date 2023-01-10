@@ -169,10 +169,6 @@ th{
     box-shadow: 0 0 0 0.2rem rgb(15 111 197 / 75%);
 }
 
-/* .empty-content:before{
-    content: "-";
-} */
-
 .dueEffect{
     color: #000;
     /* background-color: #fbaca3; */
@@ -182,6 +178,45 @@ th{
 .submitEffect{
     color: #000;
     background-color: #cfefcf;
+}
+
+#tree-view{
+    width: 18px;
+    height: 22px;
+    background-image: url(/treeview-sprite.gif);
+    background-position-x: 0px;
+    background-position-y: -1600px;
+    background-size: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: initial;
+}
+
+.spacer{
+    outline-style: none;
+    display: block;
+    width: 18px;
+    height: 22px;
+}
+
+.links-container{
+    padding-top: 4px;
+}
+
+.report-container{
+    top: 6px;
+    display: inline;
+    margin-bottom: 6px;
+}
+
+#plagiarism-box{
+    white-space: nowrap;
+    background-color: #4A5B6B !important;
+    min-width: 36px;
+    display: inline-block;
+    margin-right: 8px;
+    padding: 2px 4px;
 }
 
 @media (min-width: 576px){

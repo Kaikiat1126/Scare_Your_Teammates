@@ -19,7 +19,10 @@ export default class Config{
         this.groupStr = "Group 10";
         this.timeRemainingText = dateTools.getTimeRemaining(this.dueDate);
         this.isDue = dateTools.getIsDue();
-        this.isSubmit = false;
+        this.isSubmit = true;
+        this.fileIconType = "docx";
+        this.fileName = "Group10_SDM_Assignment"
+        this.plagiarism = 9;
     }
     
     getName(){
@@ -75,6 +78,28 @@ export default class Config{
 
     getSubmissionStatusText(){
         return this.isSubmit ? "Submitted for grading" : "Nothing has been submitted for this assignment";
+    }
+
+    getFileIconPath(){
+        if(this.fileIconType === "docx"){
+            return "/docx.png";
+        }else if(this.fileIconType === "pdf"){
+            return "/pdf.png";
+        }else if(this.fileIconType === "pptx"){
+            return "/pptx.png";
+        }else if(this.fileIconType === "xlsx"){
+            return "/xlsx.png";
+        }else if(this.fileIconType === "zip"){
+            return "/zip.png";
+        }
+    }
+
+    getFileName(){
+        return this.fileName + "." + this.fileIconType.toLowerCase();
+    }
+
+    getPlagiarism(){
+        return this.plagiarism + "%";
     }
     
 }

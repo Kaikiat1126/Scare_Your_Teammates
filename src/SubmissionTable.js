@@ -6,6 +6,9 @@ const dueDate = config.getDueDate();
 const timeRemaining = config.getTimeRemaining();
 const submissionText = config.getSubmissionStatusText();
 const isSubmit = config.getIsSubmit();
+const fileIconPath = config.getFileIconPath();
+const fileName = config.getFileName();
+const plagiarism = config.getPlagiarism();
 
 export default class SubmissionTable{
     constructor(){
@@ -71,7 +74,32 @@ export default class SubmissionTable{
         const filePlugin = document.querySelector("#file-plugin");
         let pluginHtml = "";
         if(isSubmit){
-            pluginHtml = ``;
+            pluginHtml = `
+            <div class="pb-3 pt-3">
+                <div>
+                    <table class="mb-0">
+                        <tbody>
+                            <tr>
+                                <td id="tree-view" class="pd-0 bd-0 cur-p bg-norepeat">
+                                    <a href="#" class="spacer">&nbsp;</a>
+                                </td>
+                                <td class="pd-0 bd-0">
+                                    <div class="float-l bd-box min-w-300">
+                                        <img title="fileIcon" alt="fileIcon" src=${fileIconPath} class="icon mr-2 ml-0 bs-none"/>
+                                        <a href="#" target="_blank" class="cur-p">${fileName}</a>
+                                        <div class="links-container bd-box">
+                                            <div class="pos-relative report-container float-l bd-box">
+                                                <div title="similarity" id="plagiarism-box" class="c-white fs-12 txt-center bd-box">${plagiarism}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="float-r">23 December 2022, 4:22 PM</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>`;
         }else{
             pluginHtml = `<div>-</div>`;
         }
