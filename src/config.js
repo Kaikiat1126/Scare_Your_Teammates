@@ -86,11 +86,13 @@ export default class Config{
         }else if(this.fileIconType === "pdf"){
             return "/pdf.png";
         }else if(this.fileIconType === "pptx"){
-            return "/pptx.png";
+            return "/powerpoint.png";
         }else if(this.fileIconType === "xlsx"){
-            return "/xlsx.png";
+            return "/spreadsheet.png";
         }else if(this.fileIconType === "zip"){
             return "/zip.png";
+        }else{
+            return "/text.png"
         }
     }
 
