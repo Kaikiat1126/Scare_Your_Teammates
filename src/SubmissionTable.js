@@ -5,6 +5,7 @@ const groupStr = config.getGroupStr();
 const dueDate = config.getDueDate();
 const timeRemaining = config.getTimeRemaining();
 const submissionText = config.getSubmissionStatusText();
+const isSubmit = config.getIsSubmit();
 
 export default class SubmissionTable{
     constructor(){
@@ -45,7 +46,7 @@ export default class SubmissionTable{
                         </tr>
                         <tr>
                             <th class="w-150">File submissions</th>
-                            <td>-</td>
+                            <td id="file-plugin"></td>
                         </tr>
                         <tr>
                             <th class="w-150">Submission comments</th>
@@ -66,7 +67,21 @@ export default class SubmissionTable{
         </div>`;
     }
 
+    initFilePlugin(){
+        const filePlugin = document.querySelector("#file-plugin");
+        let pluginHtml = "";
+        if(isSubmit){
+            pluginHtml = ``;
+        }else{
+            pluginHtml = `<div>-</div>`;
+        }
+
+        filePlugin.innerHTML = pluginHtml;
+    }
+
+
     render(id){
         document.querySelector(id).innerHTML = this.contents;
+        this.initFilePlugin();
     }
 }

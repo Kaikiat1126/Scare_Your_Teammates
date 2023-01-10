@@ -6,9 +6,10 @@ import Config from "./config.js";
 const config = new Config();
 const moduleName = config.getModuleName();
 const submitText = config.getSumbitText();
+const submitDesc = config.getSubmitDesc();
 
 const header = new PageHeader(moduleName, submitText);
-const body = new PageBody(submitText);
+const body = new PageBody(submitText,submitDesc);
 
 export default class Page{
     constructor(){

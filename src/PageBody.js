@@ -3,8 +3,9 @@ import SubmissionTable from "./SubmissionTable.js";
 const table = new SubmissionTable();
 
 export default class PageBody{
-    constructor(submitText){
+    constructor(submitText, submitDesc){
         this.submitText = submitText;
+        this.submitDesc = submitDesc;
         this.contents = "";
         this.init();
     }
@@ -15,7 +16,7 @@ export default class PageBody{
             <h2 id="submit-title" class="mb-2 mt-0 fw-300">${this.submitText}</h2>
             <div id="submit-intro" class="pb-3 pt-3">
                 <div class="overflow-auto">
-                    <p class="mt-0 mb-3 txt-left">Submit individually</p>
+                    <p class="mt-0 mb-3 txt-left">${this.submitDesc}</p>
                 </div>
             </div>
             <div id="submit-tablebox"></div>

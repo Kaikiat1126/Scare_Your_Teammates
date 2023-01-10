@@ -15,6 +15,7 @@ export default class Config{
         this.title = "Vite App";
         this.submitText = "Assignment Submission";
         //this.submitText = "Individual Internship Letter Writing";
+        this.submitDesc = "Each group only need to submit ONE assignment document."
         this.groupStr = "Group 10";
         this.timeRemainingText = dateTools.getTimeRemaining(this.dueDate);
         this.isDue = dateTools.getIsDue();
@@ -37,6 +38,10 @@ export default class Config{
         return this.isDue;
     }
 
+    getIsSubmit(){
+        return this.isSubmit;
+    }
+
     getUrl(){
         return this.url;
     }
@@ -56,6 +61,10 @@ export default class Config{
         //return this.submitText;
     }
 
+    getSubmitDesc(){
+        return this.submitDesc;
+    }
+
     getGroupStr(){
         return this.groupStr;
     }
@@ -65,7 +74,7 @@ export default class Config{
     }
 
     getSubmissionStatusText(){
-        return isSubmit ? "Submitted for grading" : "Nothing has been submitted for this assignment";
+        return this.isSubmit ? "Submitted for grading" : "Nothing has been submitted for this assignment";
     }
     
 }
