@@ -8,19 +8,24 @@ export default class Config{
         this.moduleName = "System Development Methods (092022-SKK)";
         //this.dueDate = "Friday, 23 December 2022, 11:59 PM";
         this.dueDate = "Monday, 12 January 2023, 11:59 PM";
+        this.lastModifyDateTime = "Friday, 23 December 2022, 4:22 PM"
 
-        const dateTools = new DateTools(this.dueDate);
+        const dateTools = new DateTools(this.dueDate,this.lastModifyDateTime);
 
         this.submitText = "Assignment Submission";
         this.submitDesc = "Each group only need to submit ONE assignment document."
-        
-        this.timeRemainingText = dateTools.getTimeRemaining();
-        this.isDue = dateTools.getIsDue();
+
         this.isSubmit = true;
+
+        this.timeRemainingText = dateTools.getTimeRemaining( );
+        this.isDue = dateTools.getIsDue();
+        
         this.isSubmittedTime = "1 day 20 hours"
         this.isLateTime = "10 secs"
+        
         this.fileIconType = "docx";
         this.fileName = "Group10_SDM_Assignment"
+
         this.fileIconPaths = {
             docx: "/docx.png",
             pdf: "/pdf.png",
@@ -30,8 +35,11 @@ export default class Config{
         };
 
         //optional
-        this.groupNum = 10;    
+        this.groupNum = 10;  
+        //this.groupNum = Math.floor(Math.random() * 100);  
+
         this.plagiarism = 9;
+        //this.plagiarism = Math.floor(Math.random() * 15);
 
     }
     
@@ -79,8 +87,7 @@ export default class Config{
     }
 
     getGroupStr(){
-        return "Group " + Math.floor(Math.random() * 100);
-        //return "Group " + this.groupNum;
+        return "Group " + this.groupNum;
     }
 
     getTimeRemaining(){
@@ -108,8 +115,7 @@ export default class Config{
     }
 
     getPlagiarism(){
-        return Math.floor(Math.random() * 15) + "%";
-        //return this.plagiarism + "%"
+        return this.plagiarism + "%"
     }
     
 }

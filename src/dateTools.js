@@ -1,6 +1,7 @@
 export default class DateTools{
-    constructor(dueDate){
+    constructor(dueDate,lastModifyDateTime){
         this.dueDateStr = dueDate;
+        this.lastModifyDateTimeStr = lastModifyDateTime;
         this.isDue = false;
     }
 
@@ -60,6 +61,13 @@ export default class DateTools{
             return `Assignment is overdue by: ${timeStr}`;
         }else{
             return `${timeStr}`;
+        }
+    }
+
+    getTimeRemaining(isSubmit){
+        if(!isSubmit) return this.getTimeRemaining();
+        else{
+            
         }
     }
 
