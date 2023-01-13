@@ -9,7 +9,7 @@ export default class Config{
 
         this.moduleName = "System Development Methods (092022-SKK)";
         //this.dueDate = "23 December 2022, 11:59 PM";
-        this.dueDate = "12 January 2023, 11:59 PM";
+        this.dueDate = "15 January 2023, 11:59 PM";
         
         //this.lastModifyDateTime = "23 December 2022, 4:22 PM"
         this.lastModifyDateTime = "14 January 2023, 5:59 PM"

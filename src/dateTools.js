@@ -71,7 +71,7 @@ export default class DateTools{
 
         let arrDiff = "";
 
-        if(lastModifyDate < dueDate && isSubmit){
+        if(lastModifyDate > dueDate && isSubmit){
             lastModifyDate = this.getDateTimeBeforeDueDate();
         }
 
