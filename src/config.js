@@ -19,10 +19,13 @@ export default class Config{
         this.submitText = "Assignment Submission";
         this.submitDesc = "Each group only need to submit ONE assignment document."
 
+        this.leftLinkText = "";
+        this.rightLinkText = "Assignment Group member self-enrolment link";
+
         this.dueDateStr = dateTools.getDaysFromDateTime(this.dueDate);
         this.lastModifyDateStr = dateTools.getDaysFromDateTime(this.lastModifyDateTime);
 
-        
+
         //optional
         this.groupNum = 10;  
         //this.groupNum = Math.floor(Math.random() * 100);  
@@ -100,6 +103,18 @@ export default class Config{
 
     getSubmitDesc(){
         return this.submitDesc;
+    }
+
+    getLeftLinkText(){
+        const leftLinkText = this.leftLinkText;
+        if(leftLinkText == "") return "";
+        else return `◄ ${leftLinkText}`;
+    }
+
+    getRightLinkText(){
+        const rightLinkText = this.rightLinkText;
+        if(rightLinkText == "") return "";
+        else return `${rightLinkText} ►`;
     }
 
     getGroupStr(){

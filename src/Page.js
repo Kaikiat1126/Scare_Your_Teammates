@@ -5,10 +5,6 @@ import Config from "./config.js";
 
 const config = new Config();
 
-const isSubmit = config.getIsSubmit();
-let lastModifyDate = config.getLastModifyDateStr();
-if(!isSubmit) lastModifyDate = "-";
-
 const headerProps = {
     moduleName: config.getModuleName(),
     submitText: config.getSumbitText()
@@ -16,7 +12,9 @@ const headerProps = {
 
 const bodyProps = {
     submitText: config.getSumbitText(),
-    submitDesc: config.getSubmitDesc()
+    submitDesc: config.getSubmitDesc(),
+    leftText: config.getLeftLinkText(),
+    rightText: config.getRightLinkText()
 }
 
 const tableProps = {
@@ -24,12 +22,12 @@ const tableProps = {
     submissionText: config.getSubmissionStatusText(),
     dueDate: config.getDueDate(),
     timeRemaining: config.getTimeRemaining(),
-    lastModifyDate: lastModifyDate,
+    lastModifyDate: config.getIsSubmit() ? config.getLastModifyDateStr() : "-",
     fileIconPath: config.getFileIconPath(),
     fileName: config.getFileName(),
     plagiarism: config.getPlagiarism(),
     fileLastModifyDate: config.getLastModifyDateTime(),
-    isSubmit: isSubmit,
+    isSubmit: config.getIsSubmit(),
     isDue: config.getIsDue()
 }
 

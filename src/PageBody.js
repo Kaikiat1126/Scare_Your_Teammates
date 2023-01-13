@@ -6,6 +6,8 @@ export default class PageBody{
     constructor(bodyProps,tableProps){
         this.submitText = bodyProps.submitText;
         this.submitDesc = bodyProps.submitDesc;
+        this.leftText = bodyProps.leftText;
+        this.rightText = bodyProps.rightText;
         this.contents = "";
         this.init();
         table = new SubmissionTable(tableProps);
@@ -25,7 +27,7 @@ export default class PageBody{
                 <div class="flex flex-wrap align-items-center">
                     <div class="col-md-4">
                         <div class="float-l">
-                            <a href="#" class="btn txt-center bg-transparent ver-al-mid cur-p fw-400 activity-link"></a>
+                            <a href="#" class="btn txt-center bg-transparent ver-al-mid cur-p fw-400 activity-link">${this.leftText}</a>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -43,7 +45,7 @@ export default class PageBody{
                     </div>
                     <div class="col-md-4">
                         <div class="float-r">
-                            <a href="#" class="btn cur-p fw-400 activity-link">Assignment Group member self-enrolment link ►</a>
+                            <a href="#" class="btn cur-p fw-400 activity-link">${this.rightText}</a>
                         </div>
                     </div>
                 </div>
