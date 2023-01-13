@@ -3,6 +3,7 @@ export default class DateTools{
         this.dueDateStr = dueDate;
         this.lastModifyDateTimeStr = lastModifyDateTime;
         this.isDue = false;
+        this.randomGenerateDate = "";
     }
 
     getCurrTimezoneDate() {
@@ -66,9 +67,13 @@ export default class DateTools{
 
         const currDate = this.getCurrTimezoneDate();
         const dueDate = this.formatDate(this.dueDateStr);
-        const lastModifyDate = this.formatDate(this.lastModifyDateTimeStr);
+        let lastModifyDate = this.formatDate(this.lastModifyDateTimeStr);
 
         let arrDiff = "";
+
+        if(lastModifyDate < dueDate && isSubmit){
+            lastModifyDate = this.getDateTimeBeforeDueDate();
+        }
 
         if(isSubmit) {
             if(lastModifyDate === "") return;
@@ -96,6 +101,23 @@ export default class DateTools{
         let day = date.getDay();
         let days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
         return `${days[day]}, ${dateTimeStr}`;
+    }
+
+    getDateTimeBeforeDueDate(){
+        let date = new Date(this.dueDateStr);
+        //randomly set the date and time before due date
+        date.setHours(Math.floor(Math.random() * 24));
+        date.setMinutes(Math.floor(Math.random() * 60));
+        date.setSeconds(Math.floor(Math.random() * 60));
+        //randomly set the date before due date by 1 to 3 days
+        date.setDate(date.getDate() - Math.floor(Math.random() * 2 + 1));
+        this.setRandomGenerateDate(date);
+        return date;
+    }
+
+    setRandomGenerateDate(date){
+        this.randomGenerateDate = date;
+        return date;
     }
 
 }

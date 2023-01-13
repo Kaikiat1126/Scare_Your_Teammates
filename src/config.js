@@ -9,10 +9,10 @@ export default class Config{
 
         this.moduleName = "System Development Methods (092022-SKK)";
         //this.dueDate = "23 December 2022, 11:59 PM";
-        this.dueDate = "16 January 2023, 11:59 PM";
+        this.dueDate = "12 January 2023, 11:59 PM";
         
-        this.lastModifyDateTime = "23 December 2022, 4:22 PM"
-        //this.lastModifyDateTime = "14 January 2023, 5:59 PM"
+        //this.lastModifyDateTime = "23 December 2022, 4:22 PM"
+        this.lastModifyDateTime = "14 January 2023, 5:59 PM"
 
         const dateTools = new DateTools(this.dueDate,this.lastModifyDateTime);
 
@@ -28,6 +28,7 @@ export default class Config{
 
         //this.fileName = "Group10_SDM_Assignment";
         this.fileName = `Group${this.groupNum}_${this.getModuleCode()}_Assignment`;
+
         this.fileIconType = "docx";
 
         this.plagiarism = 9;
@@ -38,8 +39,6 @@ export default class Config{
 
         this.timeRemainingText = dateTools.getTimeRemaining(this.isSubmit);
         this.isDue = dateTools.getIsDue();
-        
-        
 
         this.fileIconPaths = {
             docx: "/docx.png",
