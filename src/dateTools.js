@@ -11,18 +11,22 @@ export default class DateTools{
         return currDateTime;
     }
 
-    formatDate(dueDate) {
-        const date = new Date(dueDate);
+    formatDate(dateStr) {
+        if (dateStr === ""){
+            alert("Date string is empty");
+            return "";
+        }
+        const date = new Date(dateStr);
         return date.toString();
     }
 
-    getDateDiff(dueDate, currDate) {
+    getDateDiff(dueDate, date2) {
         dueDate = typeof dueDate === 'string' ? new Date(dueDate) : dueDate;
-        currDate = typeof currDate === 'string' ? new Date(currDate) : currDate;
+        date2 = typeof date2 === 'string' ? new Date(date2) : date2;
 
-        this.isDue = dueDate < currDate ? true : false;
+        this.isDue = dueDate < date2 ? true : false;
 
-        const diff = Math.abs(dueDate - currDate);
+        const diff = Math.abs(dueDate - date2);
         
         const diffDays = Math.floor(diff / (1000 * 60 * 60 * 24));
         const diffHours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -44,12 +48,34 @@ export default class DateTools{
         }
     }
 
+    getTimeRemainingText(timeStr, isSubmit) {
+        const overdueText = `Assignment is overdue by: ${timeStr}`;
+        const lateText = `Assignment was submitted ${timeStr} late`;
+        const onTimeText = `${timeStr}`;
+        const earlyText = `Assignment was submitted ${timeStr} early`;
+      
+        if (this.isDue) {
+          return isSubmit ? lateText : overdueText;
+        } else {
+          return isSubmit ? earlyText : onTimeText;
+        }
+    }     
+
     getTimeRemaining(isSubmit){
         if(arguments.length === 0) isSubmit = false;
 
         const currDate = this.getCurrTimezoneDate();
         const dueDate = this.formatDate(this.dueDateStr);
-        const arrDiff = this.getDateDiff(dueDate, currDate);
+        const lastModifyDate = this.formatDate(this.lastModifyDateTimeStr);
+
+        let arrDiff = "";
+
+        if(isSubmit) {
+            if(lastModifyDate === "") return;
+            arrDiff = this.getDateDiff(dueDate, lastModifyDate);
+        }else{
+            arrDiff = this.getDateDiff(dueDate, currDate);
+        }
 
         const day = arrDiff[0];
         const hour = arrDiff[1];
@@ -58,33 +84,18 @@ export default class DateTools{
 
         const timeStr = this.getTimeDiff(day, hour, minute, second);
 
-        if(this.isDue){
-            return `Assignment is overdue by: ${timeStr}`;
-        }else{
-            return `${timeStr}`;
-        }
+        return this.getTimeRemainingText(timeStr,isSubmit);
     }
-
-    getTimeRemainingText(){
-        
-    }
-
-    
-    // getTimeRemaining(isSubmit){
-    //     if(arguments.length === 0) isSubmit = false;
-
-    //     //const currDate = this.getCurrTimezoneDate();
-
-    //     if(!isSubmit) {
-    //         return this.getTimeRemaining();
-    //     }else{
-    //         console.log("hi");
-    //     }
-        
-    // }
 
     getIsDue(){
         return this.isDue;
+    }
+
+    getDaysFromDateTime(dateTimeStr){
+        let date = new Date(dateTimeStr);
+        let day = date.getDay();
+        let days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+        return `${days[day]}, ${dateTimeStr}`;
     }
 
 }

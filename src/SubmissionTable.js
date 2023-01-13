@@ -7,10 +7,12 @@ const dueDate = config.getDueDate();
 const isDue = config.getIsDue();
 const isSubmit = config.getIsSubmit();
 
-let timeRemaining = "";
-if(isSubmit && !isDue) timeRemaining = config.getIsSubmittedTime();
-else if(isSubmit && isDue) timeRemaining = config.getIsLateTime();
-else timeRemaining = config.getTimeRemaining();
+
+let timeRemaining = config.getTimeRemaining();
+
+const fileLastModifyDate = config.getLastModifyDateTime();
+let lastModifyDate = config.getLastModifyDateStr();
+if(!isSubmit) lastModifyDate = "-";
 
 const submissionText = config.getSubmissionStatusText();
 const fileIconPath = config.getFileIconPath();
@@ -52,7 +54,7 @@ export default class SubmissionTable{
                         </tr>
                         <tr>
                             <th class="w-150">Last modified</th>
-                            <td>-</td>
+                            <td>${lastModifyDate}</td>
                         </tr>
                         <tr>
                             <th class="w-150">File submissions</th>
@@ -100,7 +102,7 @@ export default class SubmissionTable{
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="float-r">23 December 2022, 4:22 PM</div>
+                                    <div class="float-r">${fileLastModifyDate}</div>
                                 </td>
                             </tr>
                         </tbody>

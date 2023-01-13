@@ -8,25 +8,38 @@ export default class Config{
         this.url = "/default_profile.png";
 
         this.moduleName = "System Development Methods (092022-SKK)";
-        this.dueDate = "Friday, 23 December 2022, 11:59 PM";
-        //this.dueDate = "Monday, 12 January 2023, 11:59 PM";
-        this.lastModifyDateTime = "Friday, 23 December 2022, 4:22 PM"
+        //this.dueDate = "23 December 2022, 11:59 PM";
+        this.dueDate = "16 January 2023, 11:59 PM";
+        
+        this.lastModifyDateTime = "23 December 2022, 4:22 PM"
+        //this.lastModifyDateTime = "14 January 2023, 5:59 PM"
 
         const dateTools = new DateTools(this.dueDate,this.lastModifyDateTime);
 
         this.submitText = "Assignment Submission";
         this.submitDesc = "Each group only need to submit ONE assignment document."
 
-        this.isSubmit = false;
+        this.dueDateStr = dateTools.getDaysFromDateTime(this.dueDate);
+        this.lastModifyDateStr = dateTools.getDaysFromDateTime(this.lastModifyDateTime);
 
-        this.timeRemainingText = dateTools.getTimeRemaining();
+        //optional
+        this.groupNum = 10;  
+        //this.groupNum = Math.floor(Math.random() * 100);  
+
+        //this.fileName = "Group10_SDM_Assignment";
+        this.fileName = `Group${this.groupNum}_${this.getModuleCode()}_Assignment`;
+        this.fileIconType = "docx";
+
+        this.plagiarism = 9;
+        //this.plagiarism = Math.floor(Math.random() * 15);
+
+        this.isSubmit = true;
+        //this.isSubmit = false;
+
+        this.timeRemainingText = dateTools.getTimeRemaining(this.isSubmit);
         this.isDue = dateTools.getIsDue();
         
-        this.isSubmittedTime = "1 day 20 hours"
-        this.isLateTime = "10 secs"
         
-        this.fileIconType = "docx";
-        this.fileName = "Group10_SDM_Assignment"
 
         this.fileIconPaths = {
             docx: "/docx.png",
@@ -35,13 +48,6 @@ export default class Config{
             xlsx: "/spreadsheet.png",
             zip: "/zip.png"
         };
-
-        //optional
-        this.groupNum = 10;  
-        //this.groupNum = Math.floor(Math.random() * 100);  
-
-        this.plagiarism = 9;
-        //this.plagiarism = Math.floor(Math.random() * 15);
 
     }
     
@@ -54,7 +60,15 @@ export default class Config{
     }
 
     getDueDate(){
-        return this.dueDate;
+        return this.dueDateStr;
+    }
+
+    getLastModifyDateTime(){
+        return this.lastModifyDateTime;
+    }
+
+    getLastModifyDateStr(){
+        return this.lastModifyDateStr;
     }
 
     getIsDue(){
@@ -93,17 +107,7 @@ export default class Config{
     }
 
     getTimeRemaining(){
-        // const dateTools = new DateTools(this.dueDate,this.lastModifyDateTime);
-        // return dateTools.getTimeRemaining(this.isSubmit);
         return this.timeRemainingText;
-    }
-
-    getIsSubmittedTime(){
-        return `Assignment was submitted ${this.isSubmittedTime} early`;
-    }
-
-    getIsLateTime(){
-        return `Assignment was submitted ${this.isLateTime} late`;
     }
 
     getSubmissionStatusText(){
