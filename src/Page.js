@@ -4,22 +4,37 @@ import PageBody from "./PageBody.js";
 import Config from "./config.js";
 
 const config = new Config();
-const moduleName = config.getModuleName();
-const submitText = config.getSumbitText();
-const submitDesc = config.getSubmitDesc();
+
+const isSubmit = config.getIsSubmit();
+let lastModifyDate = config.getLastModifyDateStr();
+if(!isSubmit) lastModifyDate = "-";
 
 const headerProps = {
-    moduleName: moduleName,
-    submitText: submitText
+    moduleName: config.getModuleName(),
+    submitText: config.getSumbitText()
 }
 
 const bodyProps = {
-    submitText: submitText,
-    submitDesc: submitDesc
+    submitText: config.getSumbitText(),
+    submitDesc: config.getSubmitDesc()
+}
+
+const tableProps = {
+    groupStr: config.getGroupStr(),
+    submissionText: config.getSubmissionStatusText(),
+    dueDate: config.getDueDate(),
+    timeRemaining: config.getTimeRemaining(),
+    lastModifyDate: lastModifyDate,
+    fileIconPath: config.getFileIconPath(),
+    fileName: config.getFileName(),
+    plagiarism: config.getPlagiarism(),
+    fileLastModifyDate: config.getLastModifyDateTime(),
+    isSubmit: isSubmit,
+    isDue: config.getIsDue()
 }
 
 const header = new PageHeader(headerProps);
-const body = new PageBody(bodyProps);
+const body = new PageBody(bodyProps,tableProps);
 
 export default class Page{
     constructor(config){

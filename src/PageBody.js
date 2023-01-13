@@ -1,13 +1,14 @@
 import SubmissionTable from "./SubmissionTable.js";
 
-const table = new SubmissionTable();
+let table = null;
 
 export default class PageBody{
-    constructor(bodyProps){
+    constructor(bodyProps,tableProps){
         this.submitText = bodyProps.submitText;
         this.submitDesc = bodyProps.submitDesc;
         this.contents = "";
         this.init();
+        table = new SubmissionTable(tableProps);
     }
 
     init(){

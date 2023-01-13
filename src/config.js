@@ -22,6 +22,7 @@ export default class Config{
         this.dueDateStr = dateTools.getDaysFromDateTime(this.dueDate);
         this.lastModifyDateStr = dateTools.getDaysFromDateTime(this.lastModifyDateTime);
 
+        
         //optional
         this.groupNum = 10;  
         //this.groupNum = Math.floor(Math.random() * 100);  

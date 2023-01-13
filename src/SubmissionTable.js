@@ -1,27 +1,7 @@
-import Config from "./config.js";
-
-const config = new Config();
-
-const groupStr = config.getGroupStr();
-const dueDate = config.getDueDate();
-const isDue = config.getIsDue();
-const isSubmit = config.getIsSubmit();
-
-
-let timeRemaining = config.getTimeRemaining();
-
-const fileLastModifyDate = config.getLastModifyDateTime();
-let lastModifyDate = config.getLastModifyDateStr();
-if(!isSubmit) lastModifyDate = "-";
-
-const submissionText = config.getSubmissionStatusText();
-const fileIconPath = config.getFileIconPath();
-const fileName = config.getFileName();
-const plagiarism = config.getPlagiarism();
-
 export default class SubmissionTable{
-    constructor(){
+    constructor(tableProps){
         this.contents = "";
+        this.tableProps = tableProps;
         this.init();
     }
 
@@ -34,11 +14,11 @@ export default class SubmissionTable{
                     <tbody>
                         <tr>
                             <th class="w-150">Group</th>
-                            <td>${groupStr}</td>
+                            <td>${this.tableProps.groupStr}</td>
                         </tr>
                         <tr>
                             <th class="w-150">Submission status</th>
-                            <td id="submit-text" class="c-black">${submissionText}</td>
+                            <td id="submit-text" class="c-black">${this.tableProps.submissionText}</td>
                         </tr>
                         <tr>
                             <th class="w-150">Grading status</th>
@@ -46,15 +26,15 @@ export default class SubmissionTable{
                         </tr>
                         <tr>
                             <th class="w-150">Due date</th>
-                            <td>${dueDate}</td>
+                            <td>${this.tableProps.dueDate}</td>
                         </tr>
                         <tr>
                             <th class="w-150">Time remaining</th>
-                            <td id="time-remaining">${timeRemaining}</td>
+                            <td id="time-remaining">${this.tableProps.timeRemaining}</td>
                         </tr>
                         <tr>
                             <th class="w-150">Last modified</th>
-                            <td>${lastModifyDate}</td>
+                            <td>${this.tableProps.lastModifyDate}</td>
                         </tr>
                         <tr>
                             <th class="w-150">File submissions</th>
@@ -82,7 +62,7 @@ export default class SubmissionTable{
     initFilePlugin(){
         const filePlugin = document.querySelector("#file-plugin");
         let pluginHtml = "";
-        if(isSubmit){
+        if(this.tableProps.isSubmit){
             pluginHtml = `
             <div class="pb-3 pt-3">
                 <div>
@@ -94,15 +74,15 @@ export default class SubmissionTable{
                                 </td>
                                 <td class="pd-0 bd-0">
                                     <div class="float-l bd-box min-w-300">
-                                        <img title="fileIcon" alt="fileIcon" src=${fileIconPath} class="icon mr-2 ml-0 bs-none"/>
-                                        <a href="#" target="_blank" class="cur-p">${fileName}</a>
+                                        <img title="fileIcon" alt="fileIcon" src=${this.tableProps.fileIconPath} class="icon mr-2 ml-0 bs-none"/>
+                                        <a href="#" target="_blank" class="cur-p">${this.tableProps.fileName}</a>
                                         <div class="links-container bd-box">
                                             <div class="pos-relative report-container float-l bd-box">
-                                                <div title="similarity" id="plagiarism-box" class="c-white fs-12 txt-center bd-box">${plagiarism}</div>
+                                                <div title="similarity" id="plagiarism-box" class="c-white fs-12 txt-center bd-box">${this.tableProps.plagiarism}</div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="float-r">${fileLastModifyDate}</div>
+                                    <div class="float-r">${this.tableProps.fileLastModifyDate}</div>
                                 </td>
                             </tr>
                         </tbody>
@@ -117,6 +97,9 @@ export default class SubmissionTable{
     }
 
     initSubmitEffect(){
+        const isSubmit = this.tableProps.isSubmit;
+        const isDue = this.tableProps.isDue;
+
         const submitText = document.querySelector("#submit-text");
         const timeRemaining = document.querySelector("#time-remaining");
 
