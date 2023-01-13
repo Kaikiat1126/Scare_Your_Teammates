@@ -3,9 +3,9 @@ import SubmissionTable from "./SubmissionTable.js";
 const table = new SubmissionTable();
 
 export default class PageBody{
-    constructor(submitText, submitDesc){
-        this.submitText = submitText;
-        this.submitDesc = submitDesc;
+    constructor(bodyProps){
+        this.submitText = bodyProps.submitText;
+        this.submitDesc = bodyProps.submitDesc;
         this.contents = "";
         this.init();
     }

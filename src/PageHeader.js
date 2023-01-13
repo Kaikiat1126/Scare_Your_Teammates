@@ -1,7 +1,7 @@
 export default class PageHeader{
-    constructor(moduleName, submitText){
-        this.moduleName = moduleName;
-        this.submitText = submitText;
+    constructor(headerProps){
+        this.moduleName = headerProps.moduleName;
+        this.submitText = headerProps.submitText;
         this.contents = "";
         this.init();
     }

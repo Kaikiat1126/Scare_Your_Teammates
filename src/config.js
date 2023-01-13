@@ -1,13 +1,15 @@
 import DateTools from "./dateTools.js";
+//const dateTools = new DateTools();
 
 export default class Config{
+
     constructor(){
         this.name = "TYU KAI KIAT";
         this.url = "/default_profile.png";
 
         this.moduleName = "System Development Methods (092022-SKK)";
-        //this.dueDate = "Friday, 23 December 2022, 11:59 PM";
-        this.dueDate = "Monday, 12 January 2023, 11:59 PM";
+        this.dueDate = "Friday, 23 December 2022, 11:59 PM";
+        //this.dueDate = "Monday, 12 January 2023, 11:59 PM";
         this.lastModifyDateTime = "Friday, 23 December 2022, 4:22 PM"
 
         const dateTools = new DateTools(this.dueDate,this.lastModifyDateTime);
@@ -15,9 +17,9 @@ export default class Config{
         this.submitText = "Assignment Submission";
         this.submitDesc = "Each group only need to submit ONE assignment document."
 
-        this.isSubmit = true;
+        this.isSubmit = false;
 
-        this.timeRemainingText = dateTools.getTimeRemaining( );
+        this.timeRemainingText = dateTools.getTimeRemaining();
         this.isDue = dateTools.getIsDue();
         
         this.isSubmittedTime = "1 day 20 hours"
@@ -91,6 +93,8 @@ export default class Config{
     }
 
     getTimeRemaining(){
+        // const dateTools = new DateTools(this.dueDate,this.lastModifyDateTime);
+        // return dateTools.getTimeRemaining(this.isSubmit);
         return this.timeRemainingText;
     }
 

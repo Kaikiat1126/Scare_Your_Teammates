@@ -8,11 +8,22 @@ const moduleName = config.getModuleName();
 const submitText = config.getSumbitText();
 const submitDesc = config.getSubmitDesc();
 
-const header = new PageHeader(moduleName, submitText);
-const body = new PageBody(submitText,submitDesc);
+const headerProps = {
+    moduleName: moduleName,
+    submitText: submitText
+}
+
+const bodyProps = {
+    submitText: submitText,
+    submitDesc: submitDesc
+}
+
+const header = new PageHeader(headerProps);
+const body = new PageBody(bodyProps);
 
 export default class Page{
-    constructor(){
+    constructor(config){
+        this.config = config;
         this.contents = "";
         this.init();
     }

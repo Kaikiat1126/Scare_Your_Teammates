@@ -1,14 +1,14 @@
 import '../style/navigation.css'
-import Config from './config.js';
 
 export default class Navigation {
-    constructor(){
+    constructor(name, url){
+        this.name = name;
+        this.url = url;
         this.contents = "";
         this.init();
     }
 
     init(){
-        const config = new Config();
         this.contents = 
         `<div class="navbar fixed-top navpadding bg-white">
                 <div class="nav_side mr-3">
@@ -30,11 +30,11 @@ export default class Navigation {
                         <div class="btn btn-color pd-2 cur-p"><i class="fa-solid fa-bell icon"></i></div>
                         <div class="btn btn-color pd-2 cur-p"><i class="fa-sharp fa-solid fa-comment icon"></i></div>
                     </div>
-                    <div class="nav_item align-item-center pl-2">
+                    <div class="nav_item align-items-center pl-2">
                         <div class="nav_usermenu cur-p c-blue">
-                            <span class="nav_username pt-2 mr-1">${config.name} .</span>
+                            <span class="nav_username pt-2 mr-1">${this.name} .</span>
                             <span class="nav_avatar">
-                                <img src="${config.getUrl()}" class="avatar mr-2" alt="avatar" />
+                                <img src="${this.url}" class="avatar mr-2" alt="avatar" />
                             </span>
                             <b class="dropdown-toggle"></b>
                         </div>

@@ -1,6 +1,7 @@
 import Config from "./config.js";
 
 const config = new Config();
+
 const groupStr = config.getGroupStr();
 const dueDate = config.getDueDate();
 const isDue = config.getIsDue();

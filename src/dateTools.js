@@ -44,7 +44,9 @@ export default class DateTools{
         }
     }
 
-    getTimeRemaining(){
+    getTimeRemaining(isSubmit){
+        if(arguments.length === 0) isSubmit = false;
+
         const currDate = this.getCurrTimezoneDate();
         const dueDate = this.formatDate(this.dueDateStr);
         const arrDiff = this.getDateDiff(dueDate, currDate);
@@ -55,7 +57,6 @@ export default class DateTools{
         const second = arrDiff[3];
 
         const timeStr = this.getTimeDiff(day, hour, minute, second);
-        //console.log(timeStr);
 
         if(this.isDue){
             return `Assignment is overdue by: ${timeStr}`;
@@ -64,12 +65,23 @@ export default class DateTools{
         }
     }
 
-    getTimeRemaining(isSubmit){
-        if(!isSubmit) return this.getTimeRemaining();
-        else{
-            
-        }
+    getTimeRemainingText(){
+        
     }
+
+    
+    // getTimeRemaining(isSubmit){
+    //     if(arguments.length === 0) isSubmit = false;
+
+    //     //const currDate = this.getCurrTimezoneDate();
+
+    //     if(!isSubmit) {
+    //         return this.getTimeRemaining();
+    //     }else{
+    //         console.log("hi");
+    //     }
+        
+    // }
 
     getIsDue(){
         return this.isDue;

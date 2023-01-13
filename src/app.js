@@ -3,15 +3,16 @@ import Navigation from './Navigation.js';
 import Help from './Help.js';
 import Footer from './Footer.js';
 import Page from './Page.js';
+import Config from './config';
 
-const nav = new Navigation();
-const page = new Page();
+const config = new Config();
+const nav = new Navigation(config.getName(), config.getUrl());
+const page = new Page(config);
 const help = new Help();
 const footer = new Footer();
 
 export default class APP{
-    constructor(name, id){
-        this.name = name;
+    constructor(id){
         this.contents = "";
         this.init();
         this.render(id);
