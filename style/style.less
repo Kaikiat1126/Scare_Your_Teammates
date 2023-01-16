@@ -1,0 +1,24 @@
+@top: 12px;
+@padding: 2px;
+@border-radius: 2px;
+@bgc: { background-color: red; };
+@font-color: { color:#fff; };
+@font-size: { font-size: 12px; };
+@line-height: { line-height: 11px; };
+@border-box: { box-sizing: border-box; };
+@hidden: { display: none; };
+
+.padding-border {
+    padding: @padding;
+    border: @border-radius;
+    @bgc();
+    @font-color();
+    @font-size();
+    @line-height();
+    top: @top;
+    @hidden();
+}
+
+.count-container{
+    .padding-border;
+}

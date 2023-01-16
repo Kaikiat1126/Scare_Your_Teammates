@@ -346,6 +346,10 @@ button {
   position: relative;
 }
 
+.pos-absolute{
+  position: absolute;
+}
+
 .overflow-auto{
   overflow: auto;
 }
