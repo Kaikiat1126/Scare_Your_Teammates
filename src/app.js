@@ -1,4 +1,5 @@
-import '../style/style.css'
+import '../style/style.less'
+import '../style/framework.css'
 import Navigation from './Navigation.js';
 import Help from './Help.js';
 import Footer from './Footer.js';
